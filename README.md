@@ -21,6 +21,7 @@ Todas las clases están en `src/main/java/com/empresa/project/json/`.
 | 3 | `files/JsonWriterReaderListExample` | Escribir y leer una **lista** con `TypeToken` |
 | 4 | `nested/ConfigLoader` y `nested/ConfigSaver` | Clases anidadas: se convierten en objetos JSON anidados |
 | 5 | `task/PersonSaver` y `task/PersonLoader` | Listas de objetos con arrays (`hobbies`) y campos `null` |
+| 6 | `json/schema/JsonSchemaValidatorExample` | Validar JSON con Json Schema |
 
 `Person` (en `json/`) es el modelo compartido por varios ejemplos. `AppConfig` es el modelo del paso 4.
 
@@ -29,6 +30,7 @@ Todas las clases están en `src/main/java/com/empresa/project/json/`.
 | Archivo | Quién lo usa | En git |
 |---------|--------------|--------|
 | `config.json` | `nested/*` | Sí, es dato de entrada |
+| `person-schema.json` | `schema/*` | Sí, es dato de entrada |
 | `person.json`, `people.json`, `people-hobbies.json` | `files/*` y `task/*` | No, se generan al ejecutar |
 
 ## Estructura del proyecto
@@ -42,6 +44,6 @@ com.empresa.project
 
 Cada sección va en su propio paquete y, cuando se trabaja, en su propia rama (`01-manejo-de-json`, y las siguientes).
 
-## Pendiente en esta sección
+## Nota sobre Json Schema
 
-- **Validación con Json Schema** (últimos dos videos): requiere agregar una librería de validación al `pom.xml`. Todavía no está decidida.
+El paso 6 usa la dependencia `com.networknt:json-schema-validator` (soporta draft 2020-12). El instructor usa Everit, que solo llega hasta draft 7.
