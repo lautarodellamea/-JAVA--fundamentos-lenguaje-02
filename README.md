@@ -40,7 +40,7 @@ Todas las clases están en `src/main/java/com/empresa/project/json/`.
 com.empresa.project
 ├── json/      sección 8: JSON con Gson (rama 01-manejo-de-json)
 ├── mvc/       sección 9: gestor de tareas con MVC (rama 02-mvc)
-└── lombok/    sección 10: bonus Lombok (todavía vacío)
+└── lombok/    sección 10: bonus Lombok (rama 03-lombok)
 ```
 
 Cada sección va en su propio paquete y, cuando se trabaja, en su propia rama (`01-manejo-de-json`, y las siguientes).
@@ -59,6 +59,17 @@ Gestor de tareas por consola. Ejecutá `com.empresa.project.mvc.Main` desde Inte
 Menú: `1` agregar, `2` eliminar, `3` actualizar, `4` mostrar todas, `5` cambiar estado, `6` completadas, `7` pendientes, `8` salir.
 
 Flujo: `TaskView` -> `TaskController` -> `TaskRepository` -> `TaskPersistence`.
+
+## Sección 10: Lombok (rama 03-lombok)
+
+Ejecutá `com.empresa.project.lombok.Main` desde IntelliJ.
+
+- `@Builder`: genera un builder para crear el objeto campo por campo (`Person.builder().name("Ana").build()`).
+- `@ToString`: genera un `toString()` con todos los campos.
+
+Cambios en `pom.xml`: se agregó Lombok 1.18.48 (scope `provided`, solo se necesita al compilar) y el `maven-compiler-plugin` con `annotationProcessorPaths`. Hace falta porque desde JDK 23 `javac` ya no ejecuta solo los procesadores de anotaciones que encuentra en el classpath.
+
+En IntelliJ: instalá el plugin de Lombok y activá `Settings > Build > Compiler > Annotation Processors > Enable annotation processing`.
 
 ## Nota sobre Json Schema
 
