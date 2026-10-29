@@ -1,6 +1,6 @@
 # Curso Java: JSON con Gson
 
-Proyecto de práctica del curso, organizado por sección. Esta rama (`01-manejo-de-json`) cubre la **sección 8: Manejo de JSON**, con ejemplos que se pueden ejecutar uno por uno.
+Proyecto de práctica del curso, organizado por sección: la **sección 8** (Manejo de JSON, ejemplos que se ejecutan uno por uno) y la **sección 9** (aplicación de tareas con MVC).
 
 ## Por dónde empezar
 
@@ -31,18 +31,34 @@ Todas las clases están en `src/main/java/com/empresa/project/json/`.
 |---------|--------------|--------|
 | `config.json` | `nested/*` | Sí, es dato de entrada |
 | `person-schema.json` | `schema/*` | Sí, es dato de entrada |
+| `tasks.json` | `mvc/*` | Sí, es un ejemplo versionado; la app lo reescribe mientras la usás |
 | `person.json`, `people.json`, `people-hobbies.json` | `files/*` y `task/*` | No, se generan al ejecutar |
 
 ## Estructura del proyecto
 
 ```
 com.empresa.project
-├── json/      sección 8: JSON con Gson (esta rama)
-├── mvc/       sección 9: aplicación práctica con MVC (todavía vacío)
+├── json/      sección 8: JSON con Gson (rama 01-manejo-de-json)
+├── mvc/       sección 9: gestor de tareas con MVC (rama 02-mvc)
 └── lombok/    sección 10: bonus Lombok (todavía vacío)
 ```
 
 Cada sección va en su propio paquete y, cuando se trabaja, en su propia rama (`01-manejo-de-json`, y las siguientes).
+
+## Sección 9: MVC (rama 02-mvc)
+
+Gestor de tareas por consola. Ejecutá `com.empresa.project.mvc.Main` desde IntelliJ, siempre desde la **raíz del proyecto** (ahí vive `tasks.json`).
+
+| Rol | Clase | Qué hace |
+|-----|-------|----------|
+| Modelo | `Task` + `TaskRepository` | Los datos y su lista en memoria |
+| Vista | `TaskView` | Menú y lectura de la consola |
+| Controlador | `TaskController` | Valida la entrada y delega |
+| Persistencia | `TaskPersistence` | Lee y escribe `tasks.json` con Gson |
+
+Menú: `1` agregar, `2` eliminar, `3` actualizar, `4` mostrar todas, `5` cambiar estado, `6` completadas, `7` pendientes, `8` salir.
+
+Flujo: `TaskView` -> `TaskController` -> `TaskRepository` -> `TaskPersistence`.
 
 ## Nota sobre Json Schema
 
