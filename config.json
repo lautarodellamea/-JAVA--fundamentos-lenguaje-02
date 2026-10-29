@@ -1,0 +1,9 @@
+{
+  "appName": "Demo App",
+  "version": "1.0",
+  "settings": {
+    "theme": "Dark",
+    "notifications": true,
+    "language": "es"
+  }
+}
